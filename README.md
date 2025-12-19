@@ -12,12 +12,11 @@ Basta fazer o download do projeto e abrir o arquivo index.html no seu browser.
 
 ### Executando apenas o container do frontend
 
-Esta opção executa **somente o frontend** isoladamente. Você precisará ter o backend rodando separadamente (localmente ou em outro container).
+Esta opção executa **somente o frontend** isoladamente. Você precisará ter o backend rodando separadamente (localmente ou em outro container) para que a aplicação funcione completamente.
 
 Certifique-se de ter o [Docker](https://docs.docker.com/engine/install/) instalado e em execução em sua máquina.
 
-Navegue até o diretório que contém o Dockerfile no terminal e seus arquivos de aplicação e
-Execute **como administrador** o seguinte comando para construir a imagem Docker:
+Navegue até o diretório que contém o Dockerfile no terminal e seus arquivos de aplicação e execute **como administrador** o seguinte comando para construir a imagem Docker:
 
 ```
 $ docker build -t supertx-front .
@@ -31,7 +30,6 @@ $ docker run -d -p 8080:80 supertx-front
 
 Uma vez executando, para acessar o front-end, basta abrir o [http://localhost:8080/#/](http://localhost:8080/#/) no navegador.
 
-**Importante:** Neste modo, o backend deve estar sendo executado separadamente para que a aplicação funcione completamente.
 
 ## Como executar com Docker Compose
 
@@ -85,7 +83,3 @@ Para parar os serviços:
 ```
 $ docker compose down
 ```
-
-**Diferença entre as opções:**
-- **Docker (apenas frontend):** Você gerencia frontend e backend separadamente, útil para desenvolvimento quando quer alterar só uma parte
-- **Docker Compose:** Toda a aplicação sobe integrada com um único comando, ideal para execução completa e demonstrações
