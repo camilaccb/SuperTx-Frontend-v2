@@ -1,0 +1,23 @@
+version: "3.7"
+
+services:
+  backend:
+    build: ../SuperTx-Backend-v2
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=app.py
+      - ROUTING_API_KEY_FILE=/run/secrets/routing_api_key
+    secrets:
+      - routing_api_key
+
+  frontend:
+    build: .
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+secrets:
+  routing_api_key:
+    file: ./secrets/routing_api_key.txt

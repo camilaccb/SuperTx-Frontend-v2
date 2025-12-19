@@ -26,10 +26,9 @@
     <div class="topnav">
         <div class="nav-item" data-section="Corridas" onclick="showSection('Corridas')">Corridas</div>
         <div class="nav-item" data-section="Clientes" onclick="showSection('Clientes')">Clientes</div>
-        <div class="nav-item" data-section="Gestao" onclick="showSection('Gestao')">Gestão</div>
     </div>
 
-    <!-- Seção para adicionar uma nova corrida -->
+    <!-- Seção para adicionar uma nova corrida e visualizar corridas recentes -->
     <section class="Corridas">
         <form>
             <br>
@@ -44,8 +43,28 @@
                 </select><br><br>
             <label for="valorCorrida">Valor da corrida:</label>
             <input type="text" id="valorCorrida" placeholder="Adicionar valor da corrida" required><br><br>
+            <label for="origemCorrida">Origem da corrida:</label>
+            <input type="text" id="origemCorrida" placeholder="Adicionar origem da corrida" required><br><br>
+            <label for="destinoCorrida">Destino da corrida:</label>
+            <input type="text" id="destinoCorrida" placeholder="Adicionar destino da corrida" required><br><br>
             <input type="submit" value="Adicionar corrida" class="addBtn" id="botaoAdicionarCorrida">
         </form>
+        <br><br>
+        <table id="corridasRecentes">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Origem</th>
+                    <th>Destino</th>
+                    <th>Hora</th>
+                    <th>Distância</th>
+                    <th>Valor total</th>
+                    <th>Valor líquido</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
     </section>
     
     <!-- Seção para adicionar uma novo cliente -->
@@ -59,24 +78,27 @@
             <label for="telefoneCliente">Telefone do cliente:</label>
             <input type="text" id="telefoneCliente" placeholder="Adicionar o telefone do cliente:" required><br><br>
             <input type="submit" value="Adicionar cliente" class="addBtn" id="botaoAdicionarCliente">
+            <input type="submit" value="Atualizar cliente" class="addBtn" id="botaoAtualizarCliente">
             <input type="submit" value="Remover cliente" class="removeBtn" id="botaoRemoverCliente">
         </form>
-    </section>
 
-    <!-- Seção com dados para gestão -->
-    <section class="Gestao" style="display:none;">
-        <br>
-        <p>Top clientes mais rentáveis</p>
-        </ul>
-
-        <table id="tabelaTopClientes">
-            <br><br>
-            <tr>
-                <th>Nome do cliente</th>
-                <th>Total_gasto</th>
-            </tr>
+        <br><br>
+        <table id="clientes">
+            <thead>
+                <tr>
+                    <th>Cliente</th>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Data de cadastro</th>
+                    <th>Última modificação</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
         </table>
+
     </section>
+
     <script src="scripts.js"></script>
 </body>
 </html>
