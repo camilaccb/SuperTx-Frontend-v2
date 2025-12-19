@@ -151,13 +151,9 @@ tr:hover {
 .editBtn:hover, .saveBtn:hover, .deleteBtn:hover {
     opacity: 0.7;
 }
-
-/* Hidden class for toggling visibility */
 .hidden {
     display: none;
 }
-
-/* Cell input styling */
 .cell-input {
     width: 100%;
     padding: 5px;
